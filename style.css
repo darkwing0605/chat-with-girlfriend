@@ -1,0 +1,384 @@
+body {
+	margin:0;
+	padding: 0;
+	font-size: 14px;
+	line-height: 1.5;
+	color: #333;
+	background-color: #f5f5f5;
+}
+button {
+	color: inherit;
+  font: inherit;
+}
+.icon {
+	display: inline-block;
+	background-repeat: no-repeat;
+	-webkit-background-size: 100%;
+	background-size: 100%;
+}
+@keyframes loading {
+	0% {
+		transform: scale(1);
+		opacity: 1;
+	}
+	100% {
+		transform: scale(.3);
+		opacity: .5;
+	}
+}
+/* 
+ * loading
+ */
+.loading {
+	/*display: none;*/
+	position: fixed;
+	background: #fff;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 999;
+}
+.loading-list {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	width: 100px;
+	height: 100px;
+	transform: translate(-50%, -50%);
+}
+.loading-list .point {
+	width: 20px;
+	height: 20px;
+	border-radius: 50%;
+	background: lightgreen;
+	position: absolute;
+	animation: loading 1s infinite;
+}
+.loading-list .point:nth-child(1) {
+	left: 0;
+	top: 50%;
+	margin-top: -10px;
+	animation-delay: 0.1s;
+}
+.loading-list .point:nth-child(2) {
+	left: 11px;
+	top: 11px;
+	animation-delay: 0.2s;
+}
+.loading-list .point:nth-child(3) {
+	left: 50%;
+	top: 0;
+	margin-left: -10px;
+	animation-delay: 0.3s;
+}
+.loading-list .point:nth-child(4) {
+	top: 11px;
+	right: 11px;
+	animation-delay: 0.4s;
+}
+.loading-list .point:nth-child(5) {
+	right: 0;
+	top: 50%;
+	margin-top: -10px;
+	animation-delay: 0.5s;
+}
+.loading-list .point:nth-child(6) {
+	right: 11px;
+	bottom: 11px;
+	animation-delay: 0.6s;
+}
+.loading-list .point:nth-child(7) {
+	bottom: 0;
+	left: 50%;
+	margin-left: -10px;
+	animation-delay: 0.7s;
+}
+.loading-list .point:nth-child(8) {
+	bottom: 11px;
+	left: 11px;
+	animation-delay: 0.8s;
+}
+.loading-text {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	width: auto;
+	height: auto;
+	transform: translate(-50%, 60px);
+	color: #333;
+	font-family: "Microsoft Yahei";
+	text-align: center;
+}
+
+/* 首页部分 */
+.first-page {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	font-size: 18px;
+	z-index: 100;
+	position: fixed;
+	background-color: #fff;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+}
+.first-page-continue {
+	border: 1px solid #ccc;
+	padding: 6px 20px;
+	border-radius: 5px;
+	margin-top: 30px;
+	background: transparent;
+	margin-bottom: 50px;
+}
+.first-page-text {
+	padding: 0 20px;
+}
+
+/* 主页部分 */
+/* 头部 */
+body.isWechat header {
+	display: none;
+}
+body.isWechat main {
+	top: 0;
+}
+header {
+	height: 44px;
+	background-color: #2b2b2b;
+	color: #fff;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+}
+.nav-left {
+	width: 150px;
+	height: 44px;
+	line-height: 44px;
+	position: relative;
+	font-size: 16px;
+	display: flex;
+	align-items: center;
+	padding-left: 8px;
+}
+.icon-nav-left {
+	width: 20px;
+	height: 20px;
+	background-image: url(./images/icon/back.svg);
+	margin-right: 10px
+}
+.nav-right {
+	position: relative;
+	display: flex;
+	align-items: center;
+	padding-right: 8px;
+}
+.icon-nav-right {
+	width: 20px;
+	height: 20px;
+	background-image: url(./images/icon/person.svg);
+}
+
+/* 主体 */
+main {
+	font-size: 16px;
+	background-color: #ebebeb;
+	position: fixed;
+	top: 44px;
+	right: 0;
+	bottom: 50px;
+	left: 0;
+	overflow-y: auto;
+	padding-bottom: 10px;
+	/*bottom: 250px;*/
+}
+main::-webkit-scrollbar {
+	display: none;
+}
+.message-item {
+	width: 100%;
+	display: flex;
+	margin-top: 8px;
+}
+.avatar {
+	width: 35px;
+	height: 35px;
+	margin: 0 10px;
+}
+.message {
+	background-color: #fff;
+	border: 1px solid #ddd;
+	padding: 7px 10px;
+	border-radius: 3px;
+	max-width: 252px;
+	position: relative;
+	overflow-wrap: break-word;
+}
+.message-item-left .message::before {
+	content: '';
+	border-top: 1px solid #ddd;
+	border-left: 1px solid #ddd;
+	width: 10px;
+	height: 10px;
+	background: #fff;
+	position: absolute;
+	top: 11px;
+	left: -6px;
+	transform: rotate(-45deg);
+}
+.message-item-right {
+	flex-direction: row-reverse;
+}
+.message-item-right .message {
+	background-color: #9fe759;
+	border-color: #87cd51;
+}
+.message-item-right .message::before {
+	content: '';
+	border-top: 1px solid #87cd51;
+	border-right: 1px solid #87cd51;
+	width: 10px;
+	height: 10px;
+	background-color: #9fe759;
+	position: absolute;
+	top: 11px;
+	right: -6px;
+	transform: rotate(45deg);
+}
+
+/* 底部 */
+footer {
+	position: fixed;
+	bottom: 0;
+	height: 50px;
+	border-top: 1px solid #ddd;
+	border-bottom: 1px solid #ddd;
+	background-color: #f5f5f7;
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	/*bottom: 200px;*/
+}
+footer .icon{
+	width: 28px;
+	height: 28px;
+	margin-left: 10px;
+}
+footer .icon:last-child {
+	margin-right: 10px;
+}
+.text-input{
+	flex: 1;
+	margin-left: 10px;
+	height: 36px;
+	border: 1px solid #ddd;
+	border-radius: 5px;
+	background: #f5f5f5;
+}
+.icon-voice{
+	background-image: url(./images/icon/voice.svg);
+}
+.icon-face{
+	background-image: url(./images/icon/smile-face.svg);
+}
+.icon-plus{
+	background-image: url(./images/icon/plus-cycle.svg);
+}
+
+/* 选择框 */
+.selected main {
+	bottom: 250px;
+}
+.selected footer {
+	bottom: 200px;
+}
+.selected .message-select {
+	bottom: 0;
+}
+.message-select {
+	height: 160px;
+	bottom: -200px;
+	position: fixed;
+	width: 100%;
+	padding: 20px;
+}
+.message-select .message-item {
+	display: flex;
+	justify-content: center;
+	margin-bottom: 20px;
+}
+
+/* 结束页部分 */
+.tips {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: fixed;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+}
+.hide {
+	display: none;
+}
+.cover {
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	background-color: rgba(0, 0, 0, .3);
+	position: absolute;
+	z-index: 100;
+}
+.tips-container {
+	width: 200px;
+	background-color: #fff;
+	border: 1px solid #ccc;
+	border-radius: 10px;
+	z-index: 101;
+	display: flex;
+	flex-direction: column;
+	padding: 20px;
+}
+.tips-text {
+	width: 100%;
+	line-height: 30px;
+	font-size: 18px;
+	text-align: center;
+	margin-bottom: 10px;
+}
+.tips-icon {
+	display: flex;
+	justify-content: space-around;
+}
+.icon-replay, .icon-share {
+	width: 40px;
+	height: 40px;
+}
+.icon-replay {
+	background-image: url(./images/icon/replay.svg);
+}
+.icon-share {
+	background-image: url(./images/icon/share.svg);
+}
+
+/* 动画部分 */
+footer, main, .message-select {
+	transition: bottom .3s;
+}
+.tips-container {
+	transform: translateY(-10%);
+}
+.fadeout {
+	opacity: 0;
+	transition: opacity 0.3s;
+}
