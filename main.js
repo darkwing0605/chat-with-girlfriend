@@ -188,6 +188,9 @@ const bindEvents = () => {
     // init()
     window.location.reload();
   })
+  g('.icon-share').addEventListener('touchend', () => {
+    let alertShare = prompt("该浏览器不支持分享，请手动复制分享地址", "https://www.dark-wing.com/chat-with-girlfriend/")
+  })
   g('.nav-left').addEventListener('touchend', () => {
     alert('女朋友的微信也敢不回？')
   })
