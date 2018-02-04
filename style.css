@@ -208,8 +208,8 @@ main::-webkit-scrollbar {
 	margin-top: 8px;
 }
 .avatar {
-	width: 35px;
-	height: 35px;
+	width: 40px;
+	height: 40px;
 	margin: 0 10px;
 }
 .message {
@@ -229,7 +229,7 @@ main::-webkit-scrollbar {
 	height: 10px;
 	background: #fff;
 	position: absolute;
-	top: 11px;
+	top: 14px;
 	left: -6px;
 	transform: rotate(-45deg);
 }
